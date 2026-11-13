@@ -1,0 +1,50 @@
+{
+  "budgets": {
+    "max_attempts": 6,
+    "max_observations": 12
+  },
+  "created_utc": "2026-11-13T16:05:11.665220+00:00",
+  "environment": {
+    "code_commit": null,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.2",
+      "numpy": "2.4.6",
+      "opencv-python": "5.0.0.93",
+      "pybullet": "3.2.7",
+      "torch": "2.15.0",
+      "torchvision": "0.29.2",
+      "ultralytics": "8.4.212"
+    },
+    "platform": "Windows",
+    "python": "3.11.9"
+  },
+  "methods": [
+    "hsv",
+    "oracle"
+  ],
+  "models": {
+    "hsv": {
+      "fixed_class_colors": true,
+      "learned": false
+    },
+    "oracle": {
+      "diagnostic_truth_input": true
+    }
+  },
+  "oracle_note": "Oracle reads true poses for diagnosis only; learned/hsv inputs have no simulator segmentation.",
+  "record_count": 2,
+  "results_sha256": "9297e4d23853a80a81ebdc0cf91ac35d71637748ffc45676f65291c1226e1e9b",
+  "run_id": "paired-20261113T160423Z-3c634612",
+  "scene_catalogue_sha256": "18aad245e2993ff97df1277df1c95eea8d664a7fc48d9f019be0146ba6ef8cf2",
+  "scene_ids_by_method": {
+    "hsv": [
+      "demo"
+    ],
+    "oracle": [
+      "demo"
+    ]
+  },
+  "schema_version": 1,
+  "timing_scope": "Task excludes model load/warmup and scene load. Initialization inside run_sorting is controller setup. Perception/localization are cumulative measured observations."
+}

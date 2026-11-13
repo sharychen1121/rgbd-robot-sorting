@@ -1,0 +1,181 @@
+{
+  "metadata": {},
+  "scene_catalogue_sha256": "49d0a3318af8e31c4c9b31a1cf3e86b507e253e83f673c0dd2158819d6d6ed08",
+  "scenes": [
+    {
+      "camera": {
+        "eye": [
+          0.5,
+          0.0,
+          2.2
+        ],
+        "far": 5.0,
+        "fov": 55.0,
+        "height": 480,
+        "near": 0.01,
+        "target": [
+          0.5,
+          0.0,
+          0.625
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "width": 640
+      },
+      "lighting": 1.0,
+      "objects": [
+        {
+          "class_name": "cylinder",
+          "color": null,
+          "xy": [
+            0.49836069505607306,
+            0.06445351978788483
+          ],
+          "yaw": -2.7789390606041593
+        },
+        {
+          "class_name": "cube",
+          "color": null,
+          "xy": [
+            0.6830725396799657,
+            0.13027788381547395
+          ],
+          "yaw": -2.467379502755878
+        },
+        {
+          "class_name": "box",
+          "color": null,
+          "xy": [
+            0.6842320071078971,
+            -0.04212260788928096
+          ],
+          "yaw": -2.3590106250097724
+        }
+      ],
+      "regime": "standard",
+      "scene_id": "standard-43",
+      "seed": 43,
+      "split": "test"
+    },
+    {
+      "camera": {
+        "eye": [
+          0.5,
+          0.0,
+          2.2
+        ],
+        "far": 5.0,
+        "fov": 55.0,
+        "height": 480,
+        "near": 0.01,
+        "target": [
+          0.5,
+          0.0,
+          0.625
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "width": 640
+      },
+      "lighting": 1.0,
+      "objects": [
+        {
+          "class_name": "box",
+          "color": null,
+          "xy": [
+            0.5014620357159603,
+            -0.07865116618436549
+          ],
+          "yaw": 1.6719299691725187
+        },
+        {
+          "class_name": "cube",
+          "color": null,
+          "xy": [
+            0.4120576337735422,
+            0.09105672828703831
+          ],
+          "yaw": 1.0683538742075553
+        },
+        {
+          "class_name": "cylinder",
+          "color": null,
+          "xy": [
+            0.5828843697987236,
+            0.026849012090017693
+          ],
+          "yaw": -0.8904256131691604
+        }
+      ],
+      "regime": "standard",
+      "scene_id": "standard-44",
+      "seed": 44,
+      "split": "test"
+    },
+    {
+      "camera": {
+        "eye": [
+          0.5,
+          0.0,
+          2.2
+        ],
+        "far": 5.0,
+        "fov": 55.0,
+        "height": 480,
+        "near": 0.01,
+        "target": [
+          0.5,
+          0.0,
+          0.625
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "width": 640
+      },
+      "lighting": 1.0,
+      "objects": [
+        {
+          "class_name": "cylinder",
+          "color": null,
+          "xy": [
+            0.4062013895587733,
+            -0.06144327955277559
+          ],
+          "yaw": 2.1870296543116865
+        },
+        {
+          "class_name": "box",
+          "color": null,
+          "xy": [
+            0.47953223193984024,
+            0.08021477749389722
+          ],
+          "yaw": 1.3653469874129778
+        },
+        {
+          "class_name": "cube",
+          "color": null,
+          "xy": [
+            0.6158296398022727,
+            -0.10614639515128942
+          ],
+          "yaw": -2.670659586748583
+        }
+      ],
+      "regime": "standard",
+      "scene_id": "standard-45",
+      "seed": 45,
+      "split": "test"
+    }
+  ],
+  "schema_version": 1
+}

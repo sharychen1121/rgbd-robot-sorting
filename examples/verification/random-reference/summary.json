@@ -1,0 +1,109 @@
+{
+  "methods": {
+    "hsv": {
+      "at_least_one_correct_placement_trials": 3,
+      "completed_trials": 3,
+      "correct_placements": 9,
+      "empty_scene_trials": 0,
+      "evaluated_trials": 3,
+      "evaluation_coverage": 1.0,
+      "full_success_rate": 1.0,
+      "grasp_attempted_trials": 3,
+      "grasp_attempts": 9,
+      "lift_only_objects": 0,
+      "lifted_objects": 9,
+      "mean_time_s": {
+        "initialization_s": 0.00031596666667610407,
+        "localization_s": 0.11693153333362716,
+        "motion_s": 18.49110530000083,
+        "perception_s": 0.039922033333520325,
+        "total_s": 19.49952930000048
+      },
+      "median_time_s": {
+        "initialization_s": 0.0002282999994349666,
+        "localization_s": 0.09584539999923436,
+        "motion_s": 14.109752399996069,
+        "perception_s": 0.02261210000142455,
+        "total_s": 14.970254600000771
+      },
+      "mis_sorted_objects": 0,
+      "object_correct_placement_rate": 1.0,
+      "planned_nonempty_trials": 3,
+      "rejection_events_by_reason": {
+        "no_body_near_visual_grasp": 36
+      },
+      "rejection_events_by_stage": {
+        "association": 36
+      },
+      "skipped_trials": 0,
+      "terminal_failures": {},
+      "timing_measured_trials": {
+        "initialization_s": 3,
+        "localization_s": 3,
+        "motion_s": 3,
+        "perception_s": 3,
+        "total_s": 3
+      },
+      "total_objects": 9,
+      "trials": 3
+    },
+    "oracle": {
+      "at_least_one_correct_placement_trials": 3,
+      "completed_trials": 3,
+      "correct_placements": 9,
+      "empty_scene_trials": 0,
+      "evaluated_trials": 3,
+      "evaluation_coverage": 1.0,
+      "full_success_rate": 1.0,
+      "grasp_attempted_trials": 3,
+      "grasp_attempts": 9,
+      "lift_only_objects": 0,
+      "lifted_objects": 9,
+      "mean_time_s": {
+        "initialization_s": 0.00032253333301923703,
+        "localization_s": 0.0,
+        "motion_s": 20.064362100001745,
+        "perception_s": 0.0,
+        "total_s": 20.065144533333296
+      },
+      "median_time_s": {
+        "initialization_s": 0.00019249999968451448,
+        "localization_s": 0.0,
+        "motion_s": 13.427300600003946,
+        "perception_s": 0.0,
+        "total_s": 13.42773970000053
+      },
+      "mis_sorted_objects": 0,
+      "object_correct_placement_rate": 1.0,
+      "planned_nonempty_trials": 3,
+      "rejection_events_by_reason": {},
+      "rejection_events_by_stage": {},
+      "skipped_trials": 0,
+      "terminal_failures": {},
+      "timing_measured_trials": {
+        "initialization_s": 3,
+        "localization_s": 3,
+        "motion_s": 3,
+        "perception_s": 3,
+        "total_s": 3
+      },
+      "total_objects": 9,
+      "trials": 3
+    }
+  },
+  "paired_scene_sets": true,
+  "run_id": "paired-20261113T161006Z-ef3f1434",
+  "scene_ids_by_method": {
+    "hsv": [
+      "standard-43",
+      "standard-44",
+      "standard-45"
+    ],
+    "oracle": [
+      "standard-43",
+      "standard-44",
+      "standard-45"
+    ]
+  },
+  "schema_version": 1
+}

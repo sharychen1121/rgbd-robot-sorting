@@ -1,0 +1,70 @@
+{
+  "budgets": {
+    "max_attempts": 6,
+    "max_observations": 12
+  },
+  "created_utc": "2026-11-13T16:12:06.579202+00:00",
+  "environment": {
+    "code_commit": null,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.2",
+      "numpy": "2.4.6",
+      "opencv-python": "5.0.0.93",
+      "pybullet": "3.2.7",
+      "torch": "2.15.0",
+      "torchvision": "0.29.2",
+      "ultralytics": "8.4.212"
+    },
+    "platform": "Windows",
+    "python": "3.11.9"
+  },
+  "methods": [
+    "hsv",
+    "oracle"
+  ],
+  "models": {
+    "hsv": {
+      "fixed_class_colors": true,
+      "learned": false
+    },
+    "oracle": {
+      "diagnostic_truth_input": true
+    }
+  },
+  "oracle_note": "Oracle reads true poses for diagnosis only; learned/hsv inputs have no simulator segmentation.",
+  "record_count": 6,
+  "results_sha256": "5652b18502401eb9c0471c855437fced2da57d2ec2c5302df0c714bbd08231dd",
+  "run_id": "paired-20261113T161006Z-ef3f1434",
+  "scene_catalogue_sha256": "49d0a3318af8e31c4c9b31a1cf3e86b507e253e83f673c0dd2158819d6d6ed08",
+  "scene_ids_by_method": {
+    "hsv": [
+      "standard-43",
+      "standard-44",
+      "standard-45"
+    ],
+    "oracle": [
+      "standard-43",
+      "standard-44",
+      "standard-45"
+    ]
+  },
+  "schema_version": 1,
+  "timing_scope": "Task excludes model load/warmup and scene load. Initialization inside run_sorting is controller setup. Perception/localization are cumulative measured observations.",
+  "verification_scope": {
+    "kind": "functional_smoke_test",
+    "formal_method_comparison": false,
+    "scene_count": 3,
+    "scene_seeds": [
+      43,
+      44,
+      45
+    ],
+    "scene_regime": "standard",
+    "scene_filtering": "None: all three generated scenes were evaluated by both methods.",
+    "purpose": "Verify paired scene replay and the guarded simulation/control interfaces.",
+    "limitations": "Only three scenes, no learned method, no statistical generalization or speed comparison.",
+    "timing_note": "Shared CPU wall-clock time; scene/model loading excluded; sensor capture included only in total time."
+  },
+  "original_command": "python -m robosort evaluate --seed 43 --count 3 --regime standard --methods oracle hsv --output examples/verification/random-reference --plots"
+}

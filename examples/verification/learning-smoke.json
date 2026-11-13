@@ -1,0 +1,288 @@
+{
+  "purpose": "Small CPU end-to-end integration check, not a formal accuracy or robot-sorting benchmark",
+  "status": "completed",
+  "versions": {
+    "python": "3.11.9",
+    "ultralytics": "8.4.212",
+    "torch": "2.15.0",
+    "torchvision": "0.29.2",
+    "numpy": "2.4.6",
+    "opencv-python": "5.0.0.93",
+    "pybullet": "3.2.7"
+  },
+  "dataset_validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Schema 1 did not record detection-label hashes; regenerate for full byte-level provenance"
+    ],
+    "splits": {
+      "segment": {
+        "train": {
+          "images": 62,
+          "instances": 153
+        },
+        "val": {
+          "images": 13,
+          "instances": 36
+        },
+        "test": {
+          "images": 15,
+          "instances": 39
+        }
+      },
+      "detect": {
+        "train": {
+          "images": 62,
+          "instances": 153
+        },
+        "val": {
+          "images": 13,
+          "instances": 36
+        },
+        "test": {
+          "images": 15,
+          "instances": 39
+        }
+      }
+    },
+    "negative_count": 14,
+    "schema_version": 1
+  },
+  "dataset_manifest_sha256": "9899bba203abcfa5d039068f49a3bddfc13a9af11884f5381988c9ceaaec5564",
+  "checkpoint": {
+    "path": "artifacts\\pilot-yolo26\\best.pt",
+    "sha256": "cc671038fdeaa3f6a50c1b56674f11d9a8f8a22fc1861d7846d19c0dd5a5532c",
+    "bytes": 6561885
+  },
+  "heldout_image_metrics": {
+    "split": "test",
+    "checkpoint": "artifacts/pilot-yolo26/best.pt",
+    "checkpoint_sha256": "cc671038fdeaa3f6a50c1b56674f11d9a8f8a22fc1861d7846d19c0dd5a5532c",
+    "dataset_yaml": "datasets/pilot-v1/segment.yaml",
+    "data_sha256": "f078098194b5f12e134baa436ee1f8cade0e2ce4038ce4033f99a031bd1257b6",
+    "versions": {
+      "python": "3.11.9",
+      "ultralytics": "8.4.212",
+      "torch": "2.15.0",
+      "torchvision": "0.29.2",
+      "numpy": "2.4.6",
+      "opencv-python": "5.0.0.93",
+      "pybullet": "3.2.7"
+    },
+    "metrics": {
+      "metrics/precision(B)": 0.5020709555457589,
+      "metrics/recall(B)": 0.4358974358974359,
+      "metrics/mAP50(B)": 0.26469918248595986,
+      "metrics/mAP50-95(B)": 0.10739333611090902,
+      "metrics/precision(M)": 0.4367902260637196,
+      "metrics/recall(M)": 0.3333333333333333,
+      "metrics/mAP50(M)": 0.19312567615232368,
+      "metrics/mAP50-95(M)": 0.06138319975594759,
+      "fitness": 0.16877653586685662
+    },
+    "completed_utc": "2026-11-13T16:11:19.135365+00:00"
+  },
+  "unseen_scene": {
+    "scene": {
+      "scene_id": "learning-smoke-unseen",
+      "seed": 241115,
+      "objects": [
+        {
+          "class_name": "cylinder",
+          "xy": [
+            0.637565152142613,
+            -0.05454482674736649
+          ],
+          "yaw": -0.1906297844053606,
+          "color": [
+            0.8745259833291859,
+            0.5360109453621136,
+            0.27380205933982044,
+            1.0
+          ]
+        },
+        {
+          "class_name": "box",
+          "xy": [
+            0.6051191973793885,
+            0.10332153668541905
+          ],
+          "yaw": 0.8037198387928179,
+          "color": [
+            0.6149212808680151,
+            0.14991699398677835,
+            0.9299532292148264,
+            1.0
+          ]
+        },
+        {
+          "class_name": "cube",
+          "xy": [
+            0.42095690355264176,
+            0.15707750652389907
+          ],
+          "yaw": 0.8421824771554767,
+          "color": [
+            0.9459416162155674,
+            0.49189988290973113,
+            0.22439991851440064,
+            1.0
+          ]
+        }
+      ],
+      "camera": {
+        "width": 320,
+        "height": 240,
+        "eye": [
+          0.5,
+          0.0,
+          2.2
+        ],
+        "target": [
+          0.5,
+          0.0,
+          0.625
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "fov": 55.0,
+        "near": 0.01,
+        "far": 5.0
+      },
+      "lighting": 1.0,
+      "split": "test",
+      "regime": "standard"
+    },
+    "predictions": [
+      {
+        "class_name": "box",
+        "confidence": 0.20149555802345276,
+        "has_mask": true,
+        "mask_localization": [
+          0.632874915582568,
+          -0.0550927628024582,
+          0.7058849334716795
+        ],
+        "mask_reason": "ok",
+        "box_localization": [
+          0.632874915582568,
+          -0.048611261296286665,
+          0.7058783173561137
+        ]
+      },
+      {
+        "class_name": "box",
+        "confidence": 0.17887070775032043,
+        "has_mask": true,
+        "mask_localization": [
+          0.6393522881478252,
+          -0.05185198321899006,
+          0.7058849334716795
+        ],
+        "mask_reason": "ok",
+        "box_localization": [
+          0.6393547620015891,
+          -0.04861234146599376,
+          0.705871701240548
+        ]
+      },
+      {
+        "class_name": "box",
+        "confidence": 0.1645173281431198,
+        "has_mask": true,
+        "mask_localization": [
+          0.42392072153384636,
+          0.15546564035883675,
+          0.6749817132949842
+        ],
+        "mask_reason": "ok",
+        "box_localization": [
+          0.42392037660351756,
+          0.15877485965007854,
+          0.6749955415725706
+        ]
+      },
+      {
+        "class_name": "box",
+        "confidence": 0.14521288871765137,
+        "has_mask": true,
+        "mask_localization": [
+          0.6025411712874161,
+          0.10254209685734239,
+          0.6749955415725706
+        ],
+        "mask_reason": "ok",
+        "box_localization": [
+          0.6025411712874161,
+          0.1025411670451902,
+          0.6749955415725706
+        ]
+      },
+      {
+        "class_name": "box",
+        "confidence": 0.10623063892126083,
+        "has_mask": true,
+        "mask_localization": [
+          0.42392072153384636,
+          0.15546564035883675,
+          0.6749817132949842
+        ],
+        "mask_reason": "ok",
+        "box_localization": [
+          0.42392106646417516,
+          0.15546705007403522,
+          0.6749817132949842
+        ]
+      },
+      {
+        "class_name": "box",
+        "confidence": 0.10063270479440689,
+        "has_mask": true,
+        "mask_localization": [
+          0.6091577205253877,
+          0.10915771600942897,
+          0.6749955415725706
+        ],
+        "mask_reason": "ok",
+        "box_localization": [
+          0.6091577205253877,
+          0.11577228537360187,
+          0.6749817132949842
+        ]
+      }
+    ],
+    "confidence_threshold": 0.1,
+    "runtime_segmentation_present": false,
+    "default_confidence_threshold": 0.25,
+    "default_confidence_prediction_count": 0
+  },
+  "elapsed_seconds": 195.80890250000084,
+  "configuration": {
+    "scene_count": 90,
+    "width": 320,
+    "height": 240,
+    "color_randomization": true,
+    "lighting_randomization": true,
+    "negative_fraction_requested": 0.15,
+    "epochs": 5,
+    "imgsz": 320,
+    "batch": 2,
+    "device": "cpu",
+    "seed": 241114,
+    "inference_seed": 241115
+  },
+  "pretrained_checkpoint": {
+    "source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n-seg.pt",
+    "sha256": "361fbfabab285c3237700b6bb91d7ecfa602cd945fffda8dbe1242829b71e73f",
+    "bytes": 6719965
+  },
+  "limitations": [
+    "Five-epoch pilot is under-trained; not a formal benchmark.",
+    "Diagnostic confidence 0.10 exposes low-confidence candidates, including duplicates and incorrect classes.",
+    "Successful RGB-D localization does not imply correct classification or completed sorting."
+  ]
+}

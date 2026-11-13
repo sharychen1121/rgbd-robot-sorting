@@ -1,0 +1,65 @@
+{
+  "metadata": {},
+  "scene_catalogue_sha256": "18aad245e2993ff97df1277df1c95eea8d664a7fc48d9f019be0146ba6ef8cf2",
+  "scenes": [
+    {
+      "camera": {
+        "eye": [
+          0.5,
+          0.0,
+          2.2
+        ],
+        "far": 5.0,
+        "fov": 55.0,
+        "height": 480,
+        "near": 0.01,
+        "target": [
+          0.5,
+          0.0,
+          0.625
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "width": 640
+      },
+      "lighting": 1.0,
+      "objects": [
+        {
+          "class_name": "cube",
+          "color": null,
+          "xy": [
+            0.5,
+            0.15
+          ],
+          "yaw": 0.0
+        },
+        {
+          "class_name": "cylinder",
+          "color": null,
+          "xy": [
+            0.58,
+            -0.15
+          ],
+          "yaw": 0.0
+        },
+        {
+          "class_name": "box",
+          "color": null,
+          "xy": [
+            0.68,
+            0.05
+          ],
+          "yaw": 0.35
+        }
+      ],
+      "regime": "fixed",
+      "scene_id": "demo",
+      "seed": 1000,
+      "split": "diagnostic"
+    }
+  ],
+  "schema_version": 1
+}
