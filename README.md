@@ -51,6 +51,18 @@ Linux/macOS 创建 `.venv` 后用 `source .venv/bin/activate`，其余命令相�
 
 默认无窗口运行，`--gui` 显示机械臂并使用实时动作。已有输出目录会拒绝覆盖；重跑请换目录名。详细操作见 [复现指南](docs/REPRODUCE.md)。
 
+### 下载后直接运行深度学习演示
+
+仓库包含已经训练的 [小规模演示权重](examples/checkpoints/README.md)，不需要先训练或另找缺失的 `best.pt`：
+
+```powershell
+python -m robosort demo --catalogue examples/verification/learned-sorting/scenes.json --method yolo_mask --weights examples/checkpoints/yolo26-pilot.pt --output results/learned-demo --gui --plots
+```
+
+该权重在一个新的随机颜色场景中真实完成了三个物体分拣，原始记录见 [学习分支验收](examples/verification/learned-sorting/README.md)。同一场景中，检测框与掩码方法均为 3/3，Hybrid 为 0/3，失败也保留。模型仍有漏检与重复，不能将这一次成功解释成随机场景普遍可靠。
+
+![本项目模型预测的类别与实例掩码](examples/verification/learned-sorting/initial_predictions.png)
+
 ## 数据、训练与深度学习演示
 
 下面是可复现的研究起点，并非保证最优的超参数。正式实验应扩大数据并固定版本。

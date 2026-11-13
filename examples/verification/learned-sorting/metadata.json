@@ -1,0 +1,106 @@
+{
+  "budgets": {
+    "max_attempts": 6,
+    "max_observations": 12
+  },
+  "created_utc": "2026-11-13T16:21:23.124535+00:00",
+  "environment": {
+    "code_commit": null,
+    "code_dirty": null,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.2",
+      "numpy": "2.4.6",
+      "opencv-python": "5.0.0.93",
+      "pybullet": "3.2.7",
+      "torch": "2.15.0",
+      "torchvision": "0.29.2",
+      "ultralytics": "8.4.212"
+    },
+    "platform": "Windows",
+    "python": "3.11.9"
+  },
+  "methods": [
+    "hybrid",
+    "yolo_box",
+    "yolo_mask"
+  ],
+  "models": {
+    "hybrid": {
+      "checkpoint_name": "best.pt",
+      "checkpoint_sha256": "dd22994db1c3bc4cac73b816087bb0d11ec5d930653853cd1018a173b0fd04ac",
+      "confidence": 0.25,
+      "device": "cpu",
+      "device_requested": "cpu",
+      "learned": true,
+      "model_load_s": 3.7232184000004054,
+      "representation": "mask",
+      "shared_predictor": true,
+      "task": "segment",
+      "warmup_s": 3.920281900000191
+    },
+    "yolo_box": {
+      "checkpoint_name": "best.pt",
+      "checkpoint_sha256": "dd22994db1c3bc4cac73b816087bb0d11ec5d930653853cd1018a173b0fd04ac",
+      "confidence": 0.25,
+      "device": "cpu",
+      "device_requested": "cpu",
+      "learned": true,
+      "model_load_s": 3.7232184000004054,
+      "representation": "box",
+      "shared_predictor": true,
+      "task": "segment",
+      "warmup_s": 3.920281900000191
+    },
+    "yolo_mask": {
+      "checkpoint_name": "best.pt",
+      "checkpoint_sha256": "dd22994db1c3bc4cac73b816087bb0d11ec5d930653853cd1018a173b0fd04ac",
+      "confidence": 0.25,
+      "device": "cpu",
+      "device_requested": "cpu",
+      "learned": true,
+      "model_load_s": 3.7232184000004054,
+      "representation": "mask",
+      "shared_predictor": true,
+      "task": "segment",
+      "warmup_s": 3.920281900000191
+    }
+  },
+  "oracle_note": "Oracle reads true poses for diagnosis only; learned/hsv inputs have no simulator segmentation.",
+  "record_count": 3,
+  "results_sha256": "8671c41dc2b108175b0c56aa761c2e674750c2be5b8d046e4b089f7d7360fc57",
+  "run_id": "paired-20261113T162057Z-cf6f7379",
+  "scene_catalogue_sha256": "e444a77e46ae52da521060d69e8bbc4f32d571dd14b25682b84b0677c3b155ce",
+  "scene_ids_by_method": {
+    "hybrid": [
+      "color-241118"
+    ],
+    "yolo_box": [
+      "color-241118"
+    ],
+    "yolo_mask": [
+      "color-241118"
+    ]
+  },
+  "schema_version": 1,
+  "timing_scope": "Task excludes model load/warmup and scene load. initialization_s inside run_sorting measures controller setup, not model initialization. RGB-D capture contributes only to total_s. Perception/localization are cumulative measured observations; model cold load and warmup are in metadata.models.",
+  "verification_scope": {
+    "kind": "learned_end_to_end_functional_smoke_test",
+    "formal_method_comparison": false,
+    "scene_count": 1,
+    "scene_seeds": [
+      241118
+    ],
+    "scene_regime": "color",
+    "camera_resolution": [
+      320,
+      240
+    ],
+    "scene_filtering": "None: one independently generated frozen scene was evaluated by all three methods.",
+    "purpose": "Verify a locally trained segmentation checkpoint through localization and guarded physical sorting.",
+    "limitations": "One scene and a smoke-trained model; no generalization, segmentation-superiority, or method-ranking claim.",
+    "threshold_changes": "None; confidence .25 and hybrid_high .8 CLI defaults retained.",
+    "timing_note": "Shared CPU wall-clock time; task excludes scene/model load and warmup; sensor capture is included only in total time."
+  },
+  "original_command": "python -m robosort evaluate --seed 241118 --count 1 --regime color --width 320 --height 240 --methods yolo_box yolo_mask hybrid --weights artifacts/yolo26-smoke-30/best.pt --output examples/verification/learned-sorting --plots"
+}

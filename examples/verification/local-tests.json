@@ -1,0 +1,46 @@
+{
+  "scope": "Local complete unit/integration suite",
+  "command": "python -m unittest discover -s tests -v",
+  "tests_run": 53,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "test_elapsed_s": 11.12,
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows",
+    "packages": {
+      "numpy": "2.4.6",
+      "opencv-python": "5.0.0.93",
+      "pybullet": "3.2.7",
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.2",
+      "ultralytics": "8.4.212",
+      "torch": "2.15.0",
+      "torchvision": "0.29.2"
+    },
+    "code_commit": "a214664678da418904d81975d106d0284a5e7315",
+    "code_dirty": true
+  },
+  "wheel_build": "passed; package imported outside repository working directory",
+  "source_files_sha256": {
+    "robosort/__init__.py": "ca2e291220fea019da1c5231ce9970c7048791755eeac8afe6334147c89ed40e",
+    "robosort/__main__.py": "47cb684481296ae9cbbcb4691614ca178c7468152604ba2a1e8d08ac5e30b93c",
+    "robosort/cli.py": "9737e9eb110a252e290f7ca85b9ea53332ef20dd277c3667ccf02262eb2fd33d",
+    "robosort/dataset.py": "deb06b7e2b539e9ab33532e3d5da566492dad3c49f5694f845d273035e5e25f8",
+    "robosort/evaluation.py": "8b7d45f76d94d3d9ea20e9914c34093417ff637daab4099b39d4101a4183d43a",
+    "robosort/execution.py": "0b1db04044e642f532b00db13d55f33bdbc70969bfb9d2fcbd6f9700c28ea126",
+    "robosort/perception.py": "0a1cfee82017e6c5c232129e56036ab3b170c2aaef98f6cc326cd6768a6f6119",
+    "robosort/sim.py": "35786f83ecc41431390c17b38d756ee918204f9881cb66d01f5be3e26bd2b5fd",
+    "robosort/training.py": "3d28fdcc84d2731048d74ed91d199435ce005ca2a88fa9e8c8576f002d96f28b",
+    "robosort/types.py": "8e4658c7663c8573a1fd2b7035d90adbf2f1e053cbd957c5a78b35ddb3682b69",
+    "tests/test_cli.py": "ac6d24a8b3a05935c3c4a72baa4ab3d89814c8382c2a85798bf4e59e8f6f6331",
+    "tests/test_contracts.py": "66326aee4e4c1195e253f77b439edcc14e45f7929b73b6009efc5cf8f8a49bfc",
+    "tests/test_dataset.py": "f23e1f5a1ff641ca9f874689c1add1eed9b1224d3ef8e28712045048ddfe5b65",
+    "tests/test_evaluation.py": "6ff34657dbd38d4c34566f84a54174696f5f0a9225c6bd7d28dc2219a1b94300",
+    "tests/test_execution.py": "a860a6422f349df18611abb507da3d4cc38652b580ac9eb7af47a97e44b3247f",
+    "tests/test_perception.py": "e7eb8828df5209bfcce5b07b88179c28729994eeb03eee5e0daad57d6de3282a",
+    "tests/test_sim.py": "a3ba60dcecb474a830a9bc98c5f0e8d273681c4f16cd8fa4cb0373a9e62d94a7"
+  },
+  "recorded_utc": "2026-11-13T16:28:43.023222+00:00"
+}

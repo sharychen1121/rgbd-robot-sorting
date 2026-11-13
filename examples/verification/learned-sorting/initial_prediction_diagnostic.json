@@ -1,0 +1,81 @@
+{
+  "diagnostic_only": true,
+  "scene_id": "color-241118",
+  "note": "Fresh initial-frame replay after the original action evaluation; no actions and no thresholds changed. Inference receives no truth segmentation.",
+  "raw_prediction_count": 3,
+  "hybrid_output_count": 0,
+  "predictions": [
+    {
+      "class_name": "box",
+      "confidence": 0.41736817359924316,
+      "bbox": [
+        148.49188232421875,
+        98.34390258789062,
+        159.6856689453125,
+        111.72415161132812
+      ],
+      "predicted_mask_pixels": 114,
+      "largest_expected_class_color_contour_area_px2": 0.0,
+      "hybrid_min_contour_area_px2": 8.75,
+      "hybrid_high_confidence_threshold": 0.8,
+      "box_localization": [
+        0.463614093158204,
+        0.09592560788098439,
+        0.6749955415725706
+      ],
+      "mask_localization": [
+        0.463614093158204,
+        0.09592604279312009,
+        0.6749955415725706
+      ]
+    },
+    {
+      "class_name": "cylinder",
+      "confidence": 0.3483617901802063,
+      "bbox": [
+        180.14468383789062,
+        93.81119537353516,
+        187.19692993164062,
+        102.09806060791016
+      ],
+      "predicted_mask_pixels": 56,
+      "largest_expected_class_color_contour_area_px2": 0.0,
+      "hybrid_min_contour_area_px2": 8.75,
+      "hybrid_high_confidence_threshold": 0.8,
+      "box_localization": [
+        0.6587953807819829,
+        0.14582860023782585,
+        0.705871701240548
+      ],
+      "mask_localization": [
+        0.6587953807819829,
+        0.14583118333665682,
+        0.7058849334716795
+      ]
+    },
+    {
+      "class_name": "cube",
+      "confidence": 0.29471445083618164,
+      "bbox": [
+        165.18096923828125,
+        113.37773132324219,
+        173.92962646484375,
+        122.48814392089844
+      ],
+      "predicted_mask_pixels": 62,
+      "largest_expected_class_color_contour_area_px2": 0.0,
+      "hybrid_min_contour_area_px2": 8.75,
+      "hybrid_high_confidence_threshold": 0.8,
+      "box_localization": [
+        0.5628483845449203,
+        0.009923428728129874,
+        0.6749886274337774
+      ],
+      "mask_localization": [
+        0.5661558793214236,
+        0.013231163319322226,
+        0.6749886274337774
+      ]
+    }
+  ]
+}

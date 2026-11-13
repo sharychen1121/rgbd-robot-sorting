@@ -1,0 +1,546 @@
+{
+  "status": "completed",
+  "purpose": "Two-stage small-data learning verification; not a formal method comparison",
+  "versions": {
+    "python": "3.11.9",
+    "ultralytics": "8.4.212",
+    "torch": "2.15.0",
+    "torchvision": "0.29.2",
+    "numpy": "2.4.6",
+    "opencv-python": "5.0.0.93",
+    "pybullet": "3.2.7"
+  },
+  "training_lineage": {
+    "stage1_epochs": 5,
+    "stage1_weights": "artifacts/pilot-yolo26/best.pt",
+    "stage1_sha256": "cc671038fdeaa3f6a50c1b56674f11d9a8f8a22fc1861d7846d19c0dd5a5532c",
+    "stage2_optimizer": "fresh Ultralytics optimizer and learning-rate schedule",
+    "equivalent_to_uninterrupted_30_epochs": false,
+    "stage2_requested_max_epochs": 25,
+    "stage2_completed_epochs": 20,
+    "stage2_early_stopping_patience": 8,
+    "stage2_selected_best_epoch": 12
+  },
+  "configuration": {
+    "data": "datasets/pilot-v1/segment.yaml",
+    "imgsz": 320,
+    "batch": 2,
+    "device": "cpu",
+    "seed": 241114
+  },
+  "dataset_validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Schema 1 did not record detection-label hashes; regenerate for full byte-level provenance"
+    ],
+    "splits": {
+      "segment": {
+        "train": {
+          "images": 62,
+          "instances": 153
+        },
+        "val": {
+          "images": 13,
+          "instances": 36
+        },
+        "test": {
+          "images": 15,
+          "instances": 39
+        }
+      },
+      "detect": {
+        "train": {
+          "images": 62,
+          "instances": 153
+        },
+        "val": {
+          "images": 13,
+          "instances": 36
+        },
+        "test": {
+          "images": 15,
+          "instances": 39
+        }
+      }
+    },
+    "negative_count": 14,
+    "schema_version": 1
+  },
+  "checkpoint": {
+    "path": "artifacts/yolo26-smoke-30/best.pt",
+    "sha256": "dd22994db1c3bc4cac73b816087bb0d11ec5d930653853cd1018a173b0fd04ac",
+    "bytes": 6566173
+  },
+  "heldout_image_metrics": {
+    "split": "test",
+    "checkpoint": "artifacts/yolo26-smoke-30/best.pt",
+    "checkpoint_sha256": "dd22994db1c3bc4cac73b816087bb0d11ec5d930653853cd1018a173b0fd04ac",
+    "dataset_yaml": "datasets/pilot-v1/segment.yaml",
+    "data_sha256": "f078098194b5f12e134baa436ee1f8cade0e2ce4038ce4033f99a031bd1257b6",
+    "versions": {
+      "python": "3.11.9",
+      "ultralytics": "8.4.212",
+      "torch": "2.15.0",
+      "torchvision": "0.29.2",
+      "numpy": "2.4.6",
+      "opencv-python": "5.0.0.93",
+      "pybullet": "3.2.7"
+    },
+    "metrics": {
+      "metrics/precision(B)": 0.619813242704497,
+      "metrics/recall(B)": 0.923076923076923,
+      "metrics/mAP50(B)": 0.6912356754681316,
+      "metrics/mAP50-95(B)": 0.4403912685644547,
+      "metrics/precision(M)": 0.5134659059885595,
+      "metrics/recall(M)": 0.6153846153846153,
+      "metrics/mAP50(M)": 0.5078914865345782,
+      "metrics/mAP50-95(M)": 0.18057758093491538,
+      "fitness": 0.6209688494993701
+    },
+    "completed_utc": "2026-11-13T16:18:40.240581+00:00"
+  },
+  "fresh_scenes": [
+    {
+      "seed": 241116,
+      "scene": {
+        "scene_id": "learning-extension-unseen-241116",
+        "seed": 241116,
+        "objects": [
+          {
+            "class_name": "cylinder",
+            "xy": [
+              0.5965920497681209,
+              0.03783570870834277
+            ],
+            "yaw": -1.9382411766369207,
+            "color": [
+              0.8180228428083722,
+              0.2128473310495401,
+              0.20187472689409078,
+              1.0
+            ]
+          },
+          {
+            "class_name": "cube",
+            "xy": [
+              0.44733576342501474,
+              -0.1427063831941951
+            ],
+            "yaw": -0.3391219916082844,
+            "color": [
+              0.6484327593836122,
+              0.6617082847701506,
+              0.0582870838763435,
+              1.0
+            ]
+          },
+          {
+            "class_name": "box",
+            "xy": [
+              0.4225042187624407,
+              0.09504387370254908
+            ],
+            "yaw": 1.1752271452030758,
+            "color": [
+              0.12976042522489903,
+              0.5362198734335046,
+              0.7847130836737655,
+              1.0
+            ]
+          }
+        ],
+        "camera": {
+          "width": 320,
+          "height": 240,
+          "eye": [
+            0.5,
+            0.0,
+            2.2
+          ],
+          "target": [
+            0.5,
+            0.0,
+            0.625
+          ],
+          "up": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "fov": 55.0,
+          "near": 0.01,
+          "far": 5.0
+        },
+        "lighting": 1.0,
+        "split": "test",
+        "regime": "standard"
+      },
+      "runtime_segmentation_present": false,
+      "confidence_threshold": 0.25,
+      "predictions": [
+        {
+          "class_name": "box",
+          "confidence": 0.5058037638664246,
+          "has_mask": true,
+          "mask_pixels": 116,
+          "mask_localization": [
+            0.42392037660351756,
+            0.1025411670451902,
+            0.6749817132949842
+          ],
+          "localization_reason": "ok",
+          "box_localization": [
+            0.42392106646417516,
+            0.0959264777052558,
+            0.6749817132949842
+          ]
+        },
+        {
+          "class_name": "cylinder",
+          "confidence": 0.2715742886066437,
+          "has_mask": true,
+          "mask_pixels": 50,
+          "mask_localization": [
+            0.60046238376003,
+            0.042129571552282204,
+            0.7058982849121158
+          ],
+          "localization_reason": "ok",
+          "box_localization": [
+            0.6004619348851794,
+            0.042129571552282204,
+            0.7058584690094087
+          ]
+        }
+      ],
+      "negative_scene": false
+    },
+    {
+      "seed": 241117,
+      "scene": {
+        "scene_id": "learning-extension-unseen-241117",
+        "seed": 241117,
+        "objects": [
+          {
+            "class_name": "cube",
+            "xy": [
+              0.5751136274965784,
+              0.09702342826019239
+            ],
+            "yaw": 2.067167262238712,
+            "color": [
+              0.42327943816298674,
+              0.09465862882053064,
+              0.8661273295366241,
+              1.0
+            ]
+          },
+          {
+            "class_name": "cylinder",
+            "xy": [
+              0.5147375629754634,
+              -0.10253517455742045
+            ],
+            "yaw": -1.2908197894551123,
+            "color": [
+              0.7262086781432975,
+              0.16488006713074144,
+              0.6448055859913356,
+              1.0
+            ]
+          },
+          {
+            "class_name": "box",
+            "xy": [
+              0.38856662417431476,
+              0.03637224035281314
+            ],
+            "yaw": 0.44535460454095244,
+            "color": [
+              0.564454317529858,
+              0.0897516582310616,
+              0.5180808254755169,
+              1.0
+            ]
+          }
+        ],
+        "camera": {
+          "width": 320,
+          "height": 240,
+          "eye": [
+            0.5,
+            0.0,
+            2.2
+          ],
+          "target": [
+            0.5,
+            0.0,
+            0.625
+          ],
+          "up": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "fov": 55.0,
+          "near": 0.01,
+          "far": 5.0
+        },
+        "lighting": 1.0,
+        "split": "test",
+        "regime": "standard"
+      },
+      "runtime_segmentation_present": false,
+      "confidence_threshold": 0.25,
+      "predictions": [
+        {
+          "class_name": "box",
+          "confidence": 0.4518943130970001,
+          "has_mask": true,
+          "mask_pixels": 127,
+          "mask_localization": [
+            0.3908427743746491,
+            0.04300152448856296,
+            0.6749955415725706
+          ],
+          "localization_reason": "ok",
+          "box_localization": [
+            0.39084326927468604,
+            0.043001134567337854,
+            0.6749955415725706
+          ]
+        },
+        {
+          "class_name": "cube",
+          "confidence": 0.3485274314880371,
+          "has_mask": true,
+          "mask_pixels": 54,
+          "mask_localization": [
+            0.5162041855987046,
+            -0.09398218800541028,
+            0.7058982849121158
+          ],
+          "localization_reason": "ok",
+          "box_localization": [
+            0.5162041855987046,
+            -0.09399012140264575,
+            0.7058849334716795
+          ]
+        },
+        {
+          "class_name": "cylinder",
+          "confidence": 0.304979145526886,
+          "has_mask": true,
+          "mask_pixels": 77,
+          "mask_localization": [
+            0.5760789335358247,
+            0.10254209685734239,
+            0.6749817132949842
+          ],
+          "localization_reason": "ok",
+          "box_localization": [
+            0.5760796233964823,
+            0.1025411670451902,
+            0.6749817132949842
+          ]
+        },
+        {
+          "class_name": "box",
+          "confidence": 0.2813063859939575,
+          "has_mask": true,
+          "mask_pixels": 77,
+          "mask_localization": [
+            0.5760792784661535,
+            0.10254209685734239,
+            0.6749817132949842
+          ],
+          "localization_reason": "ok",
+          "box_localization": [
+            0.5760796233964823,
+            0.1025411670451902,
+            0.6749817132949842
+          ]
+        }
+      ],
+      "negative_scene": false
+    },
+    {
+      "seed": 241118,
+      "scene": {
+        "scene_id": "learning-extension-unseen-241118",
+        "seed": 241118,
+        "objects": [
+          {
+            "class_name": "box",
+            "xy": [
+              0.45875792286959655,
+              0.08864043149803008
+            ],
+            "yaw": -2.122132866248881,
+            "color": [
+              0.5966625097286022,
+              0.22982398586484357,
+              0.6744745629851817,
+              1.0
+            ]
+          },
+          {
+            "class_name": "cube",
+            "xy": [
+              0.5617461580638132,
+              0.006758030017853994
+            ],
+            "yaw": -2.643798485115828,
+            "color": [
+              0.20536360112248833,
+              0.7894953593786691,
+              0.6965071611525121,
+              1.0
+            ]
+          },
+          {
+            "class_name": "cylinder",
+            "xy": [
+              0.655803575421481,
+              0.14001099552939866
+            ],
+            "yaw": 1.6439764664785592,
+            "color": [
+              0.13881947050852406,
+              0.08931318100090564,
+              0.6916891573384655,
+              1.0
+            ]
+          }
+        ],
+        "camera": {
+          "width": 320,
+          "height": 240,
+          "eye": [
+            0.5,
+            0.0,
+            2.2
+          ],
+          "target": [
+            0.5,
+            0.0,
+            0.625
+          ],
+          "up": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "fov": 55.0,
+          "near": 0.01,
+          "far": 5.0
+        },
+        "lighting": 1.0,
+        "split": "test",
+        "regime": "standard"
+      },
+      "runtime_segmentation_present": false,
+      "confidence_threshold": 0.25,
+      "predictions": [
+        {
+          "class_name": "box",
+          "confidence": 0.41736817359924316,
+          "has_mask": true,
+          "mask_pixels": 114,
+          "mask_localization": [
+            0.463614093158204,
+            0.09592604279312009,
+            0.6749955415725706
+          ],
+          "localization_reason": "ok",
+          "box_localization": [
+            0.463614093158204,
+            0.09592560788098439,
+            0.6749955415725706
+          ]
+        },
+        {
+          "class_name": "cylinder",
+          "confidence": 0.3483617901802063,
+          "has_mask": true,
+          "mask_pixels": 56,
+          "mask_localization": [
+            0.6587953807819829,
+            0.14583118333665682,
+            0.7058849334716795
+          ],
+          "localization_reason": "ok",
+          "box_localization": [
+            0.6587953807819829,
+            0.14582860023782585,
+            0.705871701240548
+          ]
+        },
+        {
+          "class_name": "cube",
+          "confidence": 0.29471445083618164,
+          "has_mask": true,
+          "mask_pixels": 62,
+          "mask_localization": [
+            0.5661558793214236,
+            0.013231163319322226,
+            0.6749886274337774
+          ],
+          "localization_reason": "ok",
+          "box_localization": [
+            0.5628483845449203,
+            0.009923428728129874,
+            0.6749886274337774
+          ]
+        }
+      ],
+      "negative_scene": false
+    },
+    {
+      "seed": 241119,
+      "scene": {
+        "scene_id": "learning-extension-unseen-241119",
+        "seed": 241119,
+        "objects": [],
+        "camera": {
+          "width": 320,
+          "height": 240,
+          "eye": [
+            0.5,
+            0.0,
+            2.2
+          ],
+          "target": [
+            0.5,
+            0.0,
+            0.625
+          ],
+          "up": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "fov": 55.0,
+          "near": 0.01,
+          "far": 5.0
+        },
+        "lighting": 1.0,
+        "split": "test",
+        "regime": "standard"
+      },
+      "negative_scene": true,
+      "runtime_segmentation_present": false,
+      "confidence_threshold": 0.25,
+      "predictions": []
+    }
+  ],
+  "elapsed_seconds": 288.20528739999827,
+  "limitations": [
+    "90-scene pilot only; no formal statistical method comparison.",
+    "The first stage ran 5 epochs; the second requested 25 but early-stopped at 20, selecting its epoch-12 checkpoint. The optimizer and learning-rate schedule were reset between stages.",
+    "The 15-image test partition was already inspected after stage 1; this is a retained-image retest, not a pristine final benchmark.",
+    "Image metrics and valid localizations do not prove completed mechanical sorting.",
+    "Fresh scenes still include a missed object and a duplicate candidate; the pilot model is not fully robust."
+  ]
+}

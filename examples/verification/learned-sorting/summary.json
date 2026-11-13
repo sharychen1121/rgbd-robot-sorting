@@ -1,0 +1,149 @@
+{
+  "methods": {
+    "hybrid": {
+      "at_least_one_correct_placement_trials": 0,
+      "completed_trials": 0,
+      "correct_placements": 0,
+      "empty_scene_trials": 0,
+      "evaluated_trials": 1,
+      "evaluation_coverage": 1.0,
+      "full_success_rate": 0.0,
+      "grasp_attempted_trials": 0,
+      "grasp_attempts": 0,
+      "lift_only_objects": 0,
+      "lifted_objects": 0,
+      "mean_time_s": {
+        "initialization_s": 0.0002127999996446306,
+        "localization_s": 2.3000011424301192e-06,
+        "motion_s": 0.09459219999916968,
+        "perception_s": 0.03694460000042454,
+        "total_s": 0.19428599999992002
+      },
+      "median_time_s": {
+        "initialization_s": 0.0002127999996446306,
+        "localization_s": 2.3000011424301192e-06,
+        "motion_s": 0.09459219999916968,
+        "perception_s": 0.03694460000042454,
+        "total_s": 0.19428599999992002
+      },
+      "mis_sorted_objects": 0,
+      "object_correct_placement_rate": 0.0,
+      "planned_nonempty_trials": 1,
+      "rejection_events_by_reason": {},
+      "rejection_events_by_stage": {},
+      "skipped_trials": 0,
+      "terminal_failures": {
+        "no_valid_targets": 1
+      },
+      "timing_measured_trials": {
+        "initialization_s": 1,
+        "localization_s": 1,
+        "motion_s": 1,
+        "perception_s": 1,
+        "total_s": 1
+      },
+      "total_objects": 3,
+      "trials": 1
+    },
+    "yolo_box": {
+      "at_least_one_correct_placement_trials": 1,
+      "completed_trials": 1,
+      "correct_placements": 3,
+      "empty_scene_trials": 0,
+      "evaluated_trials": 1,
+      "evaluation_coverage": 1.0,
+      "full_success_rate": 1.0,
+      "grasp_attempted_trials": 1,
+      "grasp_attempts": 3,
+      "lift_only_objects": 0,
+      "lifted_objects": 3,
+      "mean_time_s": {
+        "initialization_s": 0.00029429999995045364,
+        "localization_s": 0.029295900001670816,
+        "motion_s": 12.434840100002475,
+        "perception_s": 0.21971649999977672,
+        "total_s": 12.856517999998687
+      },
+      "median_time_s": {
+        "initialization_s": 0.00029429999995045364,
+        "localization_s": 0.029295900001670816,
+        "motion_s": 12.434840100002475,
+        "perception_s": 0.21971649999977672,
+        "total_s": 12.856517999998687
+      },
+      "mis_sorted_objects": 0,
+      "object_correct_placement_rate": 1.0,
+      "planned_nonempty_trials": 1,
+      "rejection_events_by_reason": {},
+      "rejection_events_by_stage": {},
+      "skipped_trials": 0,
+      "terminal_failures": {},
+      "timing_measured_trials": {
+        "initialization_s": 1,
+        "localization_s": 1,
+        "motion_s": 1,
+        "perception_s": 1,
+        "total_s": 1
+      },
+      "total_objects": 3,
+      "trials": 1
+    },
+    "yolo_mask": {
+      "at_least_one_correct_placement_trials": 1,
+      "completed_trials": 1,
+      "correct_placements": 3,
+      "empty_scene_trials": 0,
+      "evaluated_trials": 1,
+      "evaluation_coverage": 1.0,
+      "full_success_rate": 1.0,
+      "grasp_attempted_trials": 1,
+      "grasp_attempts": 3,
+      "lift_only_objects": 0,
+      "lifted_objects": 3,
+      "mean_time_s": {
+        "initialization_s": 0.0004051000014442252,
+        "localization_s": 0.011143100000481354,
+        "motion_s": 11.641941500003668,
+        "perception_s": 0.21740390000013576,
+        "total_s": 12.060004099999787
+      },
+      "median_time_s": {
+        "initialization_s": 0.0004051000014442252,
+        "localization_s": 0.011143100000481354,
+        "motion_s": 11.641941500003668,
+        "perception_s": 0.21740390000013576,
+        "total_s": 12.060004099999787
+      },
+      "mis_sorted_objects": 0,
+      "object_correct_placement_rate": 1.0,
+      "planned_nonempty_trials": 1,
+      "rejection_events_by_reason": {},
+      "rejection_events_by_stage": {},
+      "skipped_trials": 0,
+      "terminal_failures": {},
+      "timing_measured_trials": {
+        "initialization_s": 1,
+        "localization_s": 1,
+        "motion_s": 1,
+        "perception_s": 1,
+        "total_s": 1
+      },
+      "total_objects": 3,
+      "trials": 1
+    }
+  },
+  "paired_scene_sets": true,
+  "run_id": "paired-20261113T162057Z-cf6f7379",
+  "scene_ids_by_method": {
+    "hybrid": [
+      "color-241118"
+    ],
+    "yolo_box": [
+      "color-241118"
+    ],
+    "yolo_mask": [
+      "color-241118"
+    ]
+  },
+  "schema_version": 1
+}

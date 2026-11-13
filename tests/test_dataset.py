@@ -93,18 +93,25 @@ class DatasetTests(unittest.TestCase):
             report=validate_dataset(output)
             self.assertTrue(report['valid'],report['errors'])
             self.assertEqual(sum(x['images'] for x in report['splits']['segment'].values()),6)
-            # Exercise the actual generated YAML after its original path has
-            # disappeared. Only font download is disabled; path resolution is
-            # the installed Ultralytics implementation used by training.
             moved = Path(tmp)/'relocated'; output.rename(moved)
+            self.assertTrue(validate_dataset(moved)['valid'])
+            self.assertEqual(manifest['segment_yaml'], 'segment.yaml')
+
+    def test_ultralytics_resolves_moved_dataset(self):
+        try:
             from ultralytics.data.utils import check_det_dataset
+        except ImportError:
+            self.skipTest('Optional learning dependency; covered by the learning CI job')
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp)/'sample'
+            generate_dataset(output,count=6,seed=11,width=160,height=120,negative_fraction=.5)
+            moved = Path(tmp)/'relocated'; output.rename(moved)
+            # Exercise actual Ultralytics path resolution after relocation.
             with patch('ultralytics.data.utils.check_font'):
                 for task in ('segment', 'detect'):
                     config = check_det_dataset(str((moved/f'{task}.yaml').resolve()), autodownload=False)
                     for split in ('train', 'val', 'test'):
                         self.assertEqual(Path(config[split]), moved/task/'images'/split)
-            self.assertTrue(validate_dataset(moved)['valid'])
-            self.assertEqual(manifest['segment_yaml'], 'segment.yaml')
 
     def test_valid_but_changed_detection_label_fails_hash_audit(self):
         with tempfile.TemporaryDirectory() as tmp:

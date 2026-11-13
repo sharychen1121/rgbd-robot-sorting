@@ -18,6 +18,7 @@ runs/
 results/
 models/
 *.pt
+!examples/checkpoints/yolo26-pilot.pt
 *.pth
 *.onnx
 *.zip

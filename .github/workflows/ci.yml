@@ -4,6 +4,7 @@ jobs:
   core:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
         python: ['3.11']
@@ -16,3 +17,15 @@ jobs:
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
       - run: python -m robosort doctor
+  learning:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -e ".[learning]"
+      - run: python -m unittest discover -s tests -v
+      - run: python -m robosort evaluate --catalogue examples/verification/learned-sorting/scenes.json --methods yolo_mask --weights examples/checkpoints/yolo26-pilot.pt --output results/ci-learning
+      - run: python -c "import json; s=json.load(open('results/ci-learning/summary.json')); assert s['methods']['yolo_mask']['correct_placements']==3, s"

@@ -35,6 +35,14 @@ oracle 以理想位姿诊断机器人后端。HSV 使用实际图像颜色掩码
 
 ## 3. 生成自己的训练集
 
+如需先直接体验学习模型，可跳过训练，使用仓库附带的演示权重运行：
+
+```powershell
+python -m robosort demo --catalogue examples/verification/learned-sorting/scenes.json --method yolo_mask --weights examples/checkpoints/yolo26-pilot.pt --output results/03-bundled-learning --gui --plots
+```
+
+这份小规模权重已完成一个场景的真实任务验收，仍需更充分训练后才能用于正式方法比较。下列步骤用于生成自己的数据和训练版本。
+
 ```powershell
 python -m robosort dataset --output datasets/v1 --count 600 --seed 42 --random-colors --random-lighting
 python -m robosort check-dataset datasets/v1
