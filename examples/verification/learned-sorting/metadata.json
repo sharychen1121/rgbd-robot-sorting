@@ -100,7 +100,8 @@
     "purpose": "Verify a locally trained segmentation checkpoint through localization and guarded physical sorting.",
     "limitations": "One scene and a smoke-trained model; no generalization, segmentation-superiority, or method-ranking claim.",
     "threshold_changes": "None; confidence .25 and hybrid_high .8 CLI defaults retained.",
-    "timing_note": "Shared CPU wall-clock time; task excludes scene/model load and warmup; sensor capture is included only in total time."
+    "timing_note": "Shared CPU wall-clock time; task excludes scene/model load and warmup; sensor capture is included only in total time.",
+    "scene_selection": "Functional demo chosen after initial prediction previews of seeds 241116-241118; seed241118 had all three classes. Not a pre-registered random performance sample. All three methods and all their outcomes retained."
   },
   "original_command": "python -m robosort evaluate --seed 241118 --count 1 --regime color --width 320 --height 240 --methods yolo_box yolo_mask hybrid --weights artifacts/yolo26-smoke-30/best.pt --output examples/verification/learned-sorting --plots"
 }

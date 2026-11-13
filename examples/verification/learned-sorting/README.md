@@ -6,6 +6,13 @@ methods used the same locally trained YOLO26 segmentation checkpoint and the
 same guarded execution backend. Confidence 0.25 and Hybrid high threshold 0.8
 were retained; no scenes or failures were removed.
 
+This particular scene was chosen for the functional demonstration after an
+initial prediction preview of three new seeds (241116–241118); seed 241118
+had predictions for all three classes. It is not a pre-registered random
+performance sample. The other previews, including misses and duplicates,
+remain in `../learning-extension.json`. All methods then replayed this same
+frozen scene and every resulting success/failure is retained.
+
 | Method | Correctly placed | Terminal result |
 |---|---:|---|
 | `yolo_box` | 3 / 3 | completed: all_objects_placed |
