@@ -17,7 +17,7 @@
 | `hybrid` | 同一模型 + 颜色/形状检查 | 经检查或细化的掩码 | 研究规则的帮助与限制，保留颜色假设 |
 | `yolov8_mask` | YOLOv8-seg | 预测掩码 + 深度 | 对照模型版本，需统一训练预算 |
 
-**掩码**是每个实例对应的像素区域。预测掩码可以缩小读取深度的范围，减少桌面背景进入定位。它不自动保证抓取成功。当前代码输出分割指标、抓取坐标和完整分拣结果，并有相机几何测试；正式研究还应扩大定位误差评测。这里的深度学习发生在 YOLO 的训练与预测环节；IK、碰撞检查和运动控制是机器人算法。
+**掩码**是每个实例对应的像素区域。预测掩码可以缩小读取深度的范围，减少桌面背景进入定位。它不自动保证抓取成功。代码分别评价分割质量、三维定位误差和完整分拣结果，保留漏检与失败。这里的深度学习发生在 YOLO 的训练与预测环节；IK、碰撞检查和运动控制是机器人算法。
 
 ```mermaid
 flowchart LR
@@ -91,6 +91,14 @@ python -m robosort summarize results/standard-v1
 更换 `--regime color`、`lighting`、`stress` 生成独立压力测试清单，分别报告结果。比较 YOLOv8 时先用相同数据训练 `yolov8n-seg.pt`，再加入 `--methods ... yolov8_mask --yolov8-weights artifacts/yolov8-v1/best.pt`。检测框/掩码消融始终使用同一分割权重，控制器及预算一致。
 
 每次输出包含场景清单、逐轮 `results.jsonl`、CSV、汇总、模型哈希及时间记录。完整成功率、每物体正确放置率、错分、提起和拒绝原因分别统计。缺测时间保留为空；提前失败的短耗时不解释为更高效率。详见 [实验协议](docs/EXPERIMENT_PROTOCOL.md)。
+
+独立检查定位、不移动机械臂：
+
+```powershell
+python -m robosort localization-evaluate --catalogue datasets/eval-standard.json --weights artifacts/yolo26-v1/best.pt --output results/localization-v1
+```
+
+同一帧、同一组预测分别以框和掩码定位，使用不依赖类别的全局一对一 IoU 匹配评分，输出 XY/Z/三维误差、漏检、重复误检、分类正确率和定位覆盖率。误差仅对匹配且有效的定位计算，必须与覆盖率一起读，不能隐藏漏检。
 
 ## 实际验证与边界
 

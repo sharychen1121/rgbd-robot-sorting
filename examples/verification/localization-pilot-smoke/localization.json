@@ -1,0 +1,619 @@
+{
+  "coverage_denominator": "all true scene targets, including invisible and missed targets",
+  "error_denominator": "matched AND valid predictions; independent of classification correctness",
+  "evaluation": "static_localization",
+  "iou_threshold": 0.25,
+  "matching": "exact class-agnostic global one-to-one; maximum cardinality then maximum summed bbox IoU",
+  "metadata": {
+    "checkpoint_name": "yolo26-pilot.pt",
+    "checkpoint_sha256": "dd22994db1c3bc4cac73b816087bb0d11ec5d930653853cd1018a173b0fd04ac",
+    "confidence": 0.25,
+    "device": "cpu",
+    "purpose": "Three unseen static smoke scenes, not a formal performance conclusion"
+  },
+  "scene_catalogue_sha256": "a584a18b4d948c6fa5da851d5c6b2f6979b6951042d189e09cb02d67fd473a1e",
+  "scene_specs": [
+    {
+      "camera": {
+        "eye": [
+          0.5,
+          0.0,
+          2.2
+        ],
+        "far": 5.0,
+        "fov": 55.0,
+        "height": 240,
+        "near": 0.01,
+        "target": [
+          0.5,
+          0.0,
+          0.625
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "width": 320
+      },
+      "lighting": 1.0,
+      "objects": [
+        {
+          "class_name": "cylinder",
+          "color": null,
+          "xy": [
+            0.6220705040870836,
+            0.040865731035715724
+          ],
+          "yaw": -0.5990852102200055
+        },
+        {
+          "class_name": "box",
+          "color": null,
+          "xy": [
+            0.5585832842768782,
+            0.15980847040784402
+          ],
+          "yaw": 1.3276220220194128
+        },
+        {
+          "class_name": "cube",
+          "color": null,
+          "xy": [
+            0.47119754057099755,
+            -0.12669936699221634
+          ],
+          "yaw": -1.0210731748348172
+        }
+      ],
+      "regime": "standard",
+      "scene_id": "localization-smoke-571014",
+      "seed": 571014,
+      "split": "test"
+    },
+    {
+      "camera": {
+        "eye": [
+          0.5,
+          0.0,
+          2.2
+        ],
+        "far": 5.0,
+        "fov": 55.0,
+        "height": 240,
+        "near": 0.01,
+        "target": [
+          0.5,
+          0.0,
+          0.625
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "width": 320
+      },
+      "lighting": 1.0,
+      "objects": [
+        {
+          "class_name": "cylinder",
+          "color": null,
+          "xy": [
+            0.6697655004514302,
+            0.05556276889848791
+          ],
+          "yaw": -0.6028567746204199
+        },
+        {
+          "class_name": "cube",
+          "color": null,
+          "xy": [
+            0.38751938382584716,
+            0.14035227136349038
+          ],
+          "yaw": 1.9476394884995054
+        },
+        {
+          "class_name": "box",
+          "color": null,
+          "xy": [
+            0.5304901361646032,
+            0.12347402212396891
+          ],
+          "yaw": 0.12753052391226172
+        }
+      ],
+      "regime": "standard",
+      "scene_id": "localization-smoke-571015",
+      "seed": 571015,
+      "split": "test"
+    },
+    {
+      "camera": {
+        "eye": [
+          0.5,
+          0.0,
+          2.2
+        ],
+        "far": 5.0,
+        "fov": 55.0,
+        "height": 240,
+        "near": 0.01,
+        "target": [
+          0.5,
+          0.0,
+          0.625
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "width": 320
+      },
+      "lighting": 1.0,
+      "objects": [
+        {
+          "class_name": "box",
+          "color": null,
+          "xy": [
+            0.48145275643730273,
+            0.02696373985706474
+          ],
+          "yaw": -2.22375991410848
+        },
+        {
+          "class_name": "cube",
+          "color": null,
+          "xy": [
+            0.6610196955479657,
+            -0.15237163973096246
+          ],
+          "yaw": 1.1404806360949715
+        },
+        {
+          "class_name": "cylinder",
+          "color": null,
+          "xy": [
+            0.6494345683108479,
+            0.10772903316046772
+          ],
+          "yaw": 2.0622737218079505
+        }
+      ],
+      "regime": "standard",
+      "scene_id": "localization-smoke-571016",
+      "seed": 571016,
+      "split": "test"
+    }
+  ],
+  "scenes": [
+    {
+      "false_positives": [],
+      "matches": [
+        {
+          "body_id": 7,
+          "classification_correct": true,
+          "confidence": 0.33442258834838867,
+          "iou": 0.7018358269706368,
+          "localizations": {
+            "box": {
+              "depth_pixels": 94,
+              "error_3d_m": 0.009858552333058615,
+              "point_world": [
+                0.5628478146600292,
+                0.16869675868724843,
+                0.6749955415725706
+              ],
+              "reason": "ok",
+              "valid": true,
+              "xy_error_m": 0.009858550665288816,
+              "z_error_m": 5.734421407055379e-06
+            },
+            "mask": {
+              "depth_pixels": 78,
+              "error_3d_m": 0.009858552333058615,
+              "point_world": [
+                0.5628478146600292,
+                0.16869675868724843,
+                0.6749955415725706
+              ],
+              "reason": "ok",
+              "valid": true,
+              "xy_error_m": 0.009858550665288816,
+              "z_error_m": 5.734421407055379e-06
+            }
+          },
+          "predicted_bbox": [
+            163.84963989257812,
+            88.54792785644531,
+            174.09408569335938,
+            100.87953186035156
+          ],
+          "predicted_class": "box",
+          "prediction_index": 0,
+          "true_bbox": [
+            163,
+            88,
+            175,
+            103
+          ],
+          "true_class": "box",
+          "true_top_position": [
+            0.5585832755160166,
+            0.15980829835323945,
+            0.6749898071511635
+          ]
+        },
+        {
+          "body_id": 6,
+          "classification_correct": true,
+          "confidence": 0.2875410318374634,
+          "iou": 0.6754374835235929,
+          "localizations": {
+            "box": {
+              "depth_pixels": 42,
+              "error_3d_m": 0.008087732529760817,
+              "point_world": [
+                0.6199136426326515,
+                0.04861017918731643,
+                0.705871701240548
+              ],
+              "reason": "ok",
+              "valid": true,
+              "xy_error_m": 0.008039513052502795,
+              "z_error_m": 0.0008818431558891282
+            },
+            "mask": {
+              "depth_pixels": 31,
+              "error_3d_m": 0.008914302355338348,
+              "point_world": [
+                0.6263870307871877,
+                0.04861212426849406,
+                0.7058849334716795
+              ],
+              "reason": "ok",
+              "valid": true,
+              "xy_error_m": 0.00886925174600094,
+              "z_error_m": 0.0008950753870206052
+            }
+          },
+          "predicted_bbox": [
+            174.89102172851562,
+            106.929931640625,
+            182.31387329101562,
+            116.40396118164062
+          ],
+          "predicted_class": "cylinder",
+          "prediction_index": 1,
+          "true_bbox": [
+            175,
+            109,
+            183,
+            117
+          ],
+          "true_class": "cylinder",
+          "true_top_position": [
+            0.6220690078758097,
+            0.04086497610476601,
+            0.7049898580846589
+          ]
+        }
+      ],
+      "missed": [
+        {
+          "bbox": [
+            151,
+            133,
+            161,
+            143
+          ],
+          "body_id": 8,
+          "class_name": "cube",
+          "position": [
+            0.4711972846754868,
+            -0.12669925322242478,
+            0.6499897226292944
+          ],
+          "reason": "unmatched",
+          "top_position": [
+            0.4711972846754868,
+            -0.12669925322242478,
+            0.6749897226292945
+          ],
+          "visible": true,
+          "yaw": -1.021073318440417
+        }
+      ],
+      "prediction_count": 2,
+      "scene_id": "localization-smoke-571014",
+      "total_targets": 3,
+      "visible_targets": 3
+    },
+    {
+      "false_positives": [],
+      "matches": [
+        {
+          "body_id": 6,
+          "classification_correct": false,
+          "confidence": 0.2588493525981903,
+          "iou": 0.8094134468886962,
+          "localizations": {
+            "box": {
+              "depth_pixels": 44,
+              "error_3d_m": 0.006397934977866763,
+              "point_world": [
+                0.6717620856088731,
+                0.06157371407496451,
+                0.705871701240548
+              ],
+              "reason": "ok",
+              "valid": true,
+              "xy_error_m": 0.006336847927084333,
+              "z_error_m": 0.0008820035884382627
+            },
+            "mask": {
+              "depth_pixels": 31,
+              "error_3d_m": 0.006401377408611096,
+              "point_world": [
+                0.6717628461880047,
+                0.061573166297699586,
+                0.7058982849121158
+              ],
+              "reason": "ok",
+              "valid": true,
+              "xy_error_m": 0.006336568623350586,
+              "z_error_m": 0.0009085872600060885
+            }
+          },
+          "predicted_bbox": [
+            182.17413330078125,
+            106.48725891113281,
+            190.12335205078125,
+            114.74627685546875
+          ],
+          "predicted_class": "cube",
+          "prediction_index": 0,
+          "true_bbox": [
+            182,
+            107,
+            191,
+            115
+          ],
+          "true_class": "cylinder",
+          "true_top_position": [
+            0.6697596496606711,
+            0.05556156870709942,
+            0.7049896976521097
+          ]
+        }
+      ],
+      "missed": [
+        {
+          "bbox": [
+            139,
+            93,
+            149,
+            104
+          ],
+          "body_id": 7,
+          "class_name": "cube",
+          "position": [
+            0.3875195718947537,
+            0.14035210429728406,
+            0.6499897497552335
+          ],
+          "reason": "unmatched",
+          "top_position": [
+            0.3875195718947537,
+            0.14035210429728406,
+            0.6749897497552335
+          ],
+          "visible": true,
+          "yaw": 1.9476393486924533
+        },
+        {
+          "bbox": [
+            159,
+            96,
+            172,
+            106
+          ],
+          "body_id": 8,
+          "class_name": "box",
+          "position": [
+            0.5304893047655933,
+            0.12347477869921122,
+            0.6499893443918954
+          ],
+          "reason": "unmatched",
+          "top_position": [
+            0.5304893047655933,
+            0.12347477869921122,
+            0.6749893443918954
+          ],
+          "visible": true,
+          "yaw": 0.12753333573016726
+        }
+      ],
+      "prediction_count": 1,
+      "scene_id": "localization-smoke-571015",
+      "total_targets": 3,
+      "visible_targets": 3
+    },
+    {
+      "false_positives": [],
+      "matches": [
+        {
+          "body_id": 6,
+          "classification_correct": true,
+          "confidence": 0.5125308036804199,
+          "iou": 0.7414481990867191,
+          "localizations": {
+            "box": {
+              "depth_pixels": 101,
+              "error_3d_m": 0.003451059346824049,
+              "point_world": [
+                0.48346110140525544,
+                0.02977028618438971,
+                0.6749817132949842
+              ],
+              "reason": "ok",
+              "valid": true,
+              "xy_error_m": 0.003451050063304711,
+              "z_error_m": 8.004740231992713e-06
+            },
+            "mask": {
+              "depth_pixels": 76,
+              "error_3d_m": 0.00345097206769855,
+              "point_world": [
+                0.4834609514355473,
+                0.02977028618438971,
+                0.6749817132949842
+              ],
+              "reason": "ok",
+              "valid": true,
+              "xy_error_m": 0.0034509627839444204,
+              "z_error_m": 8.004740231992713e-06
+            }
+          },
+          "predicted_bbox": [
+            150.7633819580078,
+            108.64717102050781,
+            163.3480987548828,
+            121.90339660644531
+          ],
+          "predicted_class": "box",
+          "prediction_index": 0,
+          "true_bbox": [
+            150,
+            108,
+            165,
+            123
+          ],
+          "true_class": "box",
+          "true_top_position": [
+            0.4814526099426735,
+            0.026963916895758756,
+            0.6749897180352162
+          ]
+        }
+      ],
+      "missed": [
+        {
+          "bbox": [
+            179,
+            137,
+            190,
+            147
+          ],
+          "body_id": 7,
+          "class_name": "cube",
+          "position": [
+            0.6610197473780731,
+            -0.15237196198196473,
+            0.6499896838677824
+          ],
+          "reason": "unmatched",
+          "top_position": [
+            0.6610197473780731,
+            -0.15237196198196473,
+            0.6749896838677825
+          ],
+          "visible": true,
+          "yaw": 1.1404802952315025
+        },
+        {
+          "bbox": [
+            179,
+            99,
+            188,
+            107
+          ],
+          "body_id": 8,
+          "class_name": "cylinder",
+          "position": [
+            0.6494307143484951,
+            0.10773080056579176,
+            0.6649897899498812
+          ],
+          "reason": "unmatched",
+          "top_position": [
+            0.6494307143484951,
+            0.10773080056579176,
+            0.7049897899498813
+          ],
+          "visible": true,
+          "yaw": 2.0622793784212603
+        }
+      ],
+      "prediction_count": 1,
+      "scene_id": "localization-smoke-571016",
+      "total_targets": 3,
+      "visible_targets": 3
+    }
+  ],
+  "schema_version": 1,
+  "summary": {
+    "classification_accuracy_matched": 0.75,
+    "classification_correct_matches": 3,
+    "correct_class_coverage_all_targets": 0.3333333333333333,
+    "false_positive_predictions": 0,
+    "matched_targets": 4,
+    "missed_targets": 5,
+    "prediction_count": 4,
+    "representations": {
+      "box": {
+        "error_3d_m": {
+          "count": 4,
+          "mean": 0.0069488197968775615,
+          "median": 0.00724283375381379,
+          "p95": 0.009592929362563944
+        },
+        "invalid_matched_localizations": 0,
+        "valid_fraction_of_matched_targets": 1.0,
+        "valid_localization_coverage_all_targets": 0.4444444444444444,
+        "valid_matched_localizations": 4,
+        "xy_error_m": {
+          "count": 4,
+          "mean": 0.006921490427045164,
+          "median": 0.007188180489793564,
+          "p95": 0.009585695023370913
+        },
+        "z_error_m": {
+          "count": 4,
+          "mean": 0.00044439647649160974,
+          "median": 0.00044492394806056046,
+          "p95": 0.0008819795235558925
+        }
+      },
+      "mask": {
+        "error_3d_m": {
+          "count": 4,
+          "mean": 0.007156301041176653,
+          "median": 0.007657839881974722,
+          "p95": 0.009716914836400574
+        },
+        "invalid_matched_localizations": 0,
+        "valid_fraction_of_matched_targets": 1.0,
+        "valid_localization_coverage_all_targets": 0.4444444444444444,
+        "valid_matched_localizations": 4,
+        "xy_error_m": {
+          "count": 4,
+          "mean": 0.007128833454646191,
+          "median": 0.0076029101846757634,
+          "p95": 0.009710155827395634
+        },
+        "z_error_m": {
+          "count": 4,
+          "mean": 0.00045435045216643544,
+          "median": 0.00045154006362629895,
+          "p95": 0.000906560479058266
+        }
+      }
+    },
+    "total_targets": 9,
+    "visible_targets": 9
+  }
+}

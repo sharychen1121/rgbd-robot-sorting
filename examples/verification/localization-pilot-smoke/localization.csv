@@ -1,0 +1,19 @@
+﻿scene_id,representation,status,body_id,true_class,prediction_index,predicted_class,classification_correct,iou,valid,reason,point_world,depth_pixels,xy_error_m,z_error_m,error_3d_m
+localization-smoke-571014,box,matched,7,box,0,box,True,0.7018358269706368,True,ok,"(0.5628478146600292, 0.16869675868724843, 0.6749955415725706)",94,0.009858550665288816,5.734421407055379e-06,0.009858552333058615
+localization-smoke-571014,box,matched,6,cylinder,1,cylinder,True,0.6754374835235929,True,ok,"(0.6199136426326515, 0.04861017918731643, 0.705871701240548)",42,0.008039513052502795,0.0008818431558891282,0.008087732529760817
+localization-smoke-571014,box,missed,8,cube,,,,,,unmatched,,,,,
+localization-smoke-571014,mask,matched,7,box,0,box,True,0.7018358269706368,True,ok,"(0.5628478146600292, 0.16869675868724843, 0.6749955415725706)",78,0.009858550665288816,5.734421407055379e-06,0.009858552333058615
+localization-smoke-571014,mask,matched,6,cylinder,1,cylinder,True,0.6754374835235929,True,ok,"(0.6263870307871877, 0.04861212426849406, 0.7058849334716795)",31,0.00886925174600094,0.0008950753870206052,0.008914302355338348
+localization-smoke-571014,mask,missed,8,cube,,,,,,unmatched,,,,,
+localization-smoke-571015,box,matched,6,cylinder,0,cube,False,0.8094134468886962,True,ok,"(0.6717620856088731, 0.06157371407496451, 0.705871701240548)",44,0.006336847927084333,0.0008820035884382627,0.006397934977866763
+localization-smoke-571015,box,missed,7,cube,,,,,,unmatched,,,,,
+localization-smoke-571015,box,missed,8,box,,,,,,unmatched,,,,,
+localization-smoke-571015,mask,matched,6,cylinder,0,cube,False,0.8094134468886962,True,ok,"(0.6717628461880047, 0.061573166297699586, 0.7058982849121158)",31,0.006336568623350586,0.0009085872600060885,0.006401377408611096
+localization-smoke-571015,mask,missed,7,cube,,,,,,unmatched,,,,,
+localization-smoke-571015,mask,missed,8,box,,,,,,unmatched,,,,,
+localization-smoke-571016,box,matched,6,box,0,box,True,0.7414481990867191,True,ok,"(0.48346110140525544, 0.02977028618438971, 0.6749817132949842)",101,0.003451050063304711,8.004740231992713e-06,0.003451059346824049
+localization-smoke-571016,box,missed,7,cube,,,,,,unmatched,,,,,
+localization-smoke-571016,box,missed,8,cylinder,,,,,,unmatched,,,,,
+localization-smoke-571016,mask,matched,6,box,0,box,True,0.7414481990867191,True,ok,"(0.4834609514355473, 0.02977028618438971, 0.6749817132949842)",76,0.0034509627839444204,8.004740231992713e-06,0.00345097206769855
+localization-smoke-571016,mask,missed,7,cube,,,,,,unmatched,,,,,
+localization-smoke-571016,mask,missed,8,cylinder,,,,,,unmatched,,,,,

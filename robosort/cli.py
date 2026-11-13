@@ -196,6 +196,13 @@ def parser():
     scene_args(p); p.add_argument("--catalogue"); p.add_argument("--weights", required=True)
     p.add_argument("--device", default="cpu"); p.add_argument("--conf", type=float, default=.25)
     p.add_argument("--output", required=True); p.set_defaults(hybrid_high=.8, yolov8_weights=None)
+    p = sub.add_parser("localization-evaluate", help="Class-agnostic matching, missed/duplicate predictions and RGB-D errors; no arm movement")
+    scene_args(p); p.add_argument("--catalogue"); p.add_argument("--count", type=int, default=30)
+    p.add_argument("--method", choices=("hsv", "yolo_mask", "hybrid"), default="yolo_mask")
+    p.add_argument("--weights"); p.add_argument("--device", default="cpu"); p.add_argument("--conf", type=float, default=.25)
+    p.add_argument("--hybrid-high", type=float, default=.8); p.set_defaults(yolov8_weights=None)
+    p.add_argument("--iou-threshold", type=float, default=.25)
+    p.add_argument("--output", required=True)
     p = sub.add_parser("summarize"); p.add_argument("path"); p.add_argument("--plots")
     return ap
 
@@ -265,6 +272,20 @@ def main(argv=None):
                 "files_sha256": {name: sha256_file(output/name) for name in ("predictions.png", "coordinates.json", "scenes.json")}}
             (output/"metadata.json").write_text(json.dumps(metadata,indent=2),encoding="utf-8")
             _json(coordinates)
+        elif args.command == "localization-evaluate":
+            from .localization_evaluation import evaluate_localization, save_localization_results
+            from .evaluation import save_catalogue
+            if not math.isfinite(args.iou_threshold) or not 0 < args.iou_threshold <= 1:
+                raise ValueError("IoU threshold must lie in (0, 1]")
+            output = _fresh_output(args.output); scenes = _catalogue(args)
+            predictors, models = _build_predictors([args.method], args, scenes[0])
+            report = evaluate_localization(scenes, predictors[args.method], iou_threshold=args.iou_threshold)
+            metadata = {"environment": _environment(), "models": models,
+                "created_utc": datetime.now(timezone.utc).isoformat(), "command": "localization-evaluate",
+                "runtime_truth": "No segmentation/class/position truth is supplied to the predictor or localizer; scorer only"}
+            print(save_localization_results(report, output, metadata))
+            save_catalogue(scenes, output/"scenes.json")
+            _json(report["summary"])
         elif args.command == "summarize":
             from .evaluation import load_results, summarize, plot_results
             _json(summarize(load_results(args.path)))
